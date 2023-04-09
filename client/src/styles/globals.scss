@@ -1,0 +1,365 @@
+@tailwind base;
+
+@import './settings/__settings';
+
+// Scrollbars
+
+/* Firefox */
+* {
+  // scrollbar-width: thin;
+  scrollbar-width: thin;
+  // scrollbar-color: var(--secondary) var(--primary);
+  scrollbar-color: $sec $sec;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0.5vw;
+  background-color: transparent;
+
+  @media (max-width: 62em) {
+    width: 2vw;
+  }
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-white/20;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  @apply bg-sec;
+}
+ 
+
+@tailwind components;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  @apply bg-transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  // font-family: $font, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  background-color: $white-d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+// p,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// input,
+// textarea,
+// button,
+// form {
+//   // font-family: $font !important;
+//   // margin-bottom: 42px;
+//   // margin-bottom: 2.25vw;
+//   // line-height: 1.2;
+// }
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.main {
+  color: $main;
+}
+
+.main-l {
+  color: $main-l;
+}
+
+.main-d {
+  color: $main-d;
+}
+
+@tailwind utilities;
+
+
+// New syntax, for some broswsers
+// Does not have ability for linear gradient colors
+// Has ability for transitions and hover effects
+// html {
+//   scrollbar-color: $main-d #a9a9a9;
+//   overflow-y: auto;
+//   overflow-x: hidden;
+//   scroll-behavior: smooth;
+// }
+
+img {
+  user-select: none;
+}
+
+
+
+.sidebar {
+  @apply fixed top-0 left-0 z-50 flex h-screen flex-col bg-white shadow-lg dark:bg-gray-900;
+  width: 5vw;
+}
+
+.sidebar-hr {
+  @apply mx-2 rounded-full 
+  border border-gray-200 bg-gray-200 dark:border-gray-800
+  dark:bg-gray-800;
+}
+
+.navbar {
+  @apply fixed z-40 m-0 flex 
+  flex-row items-center
+  justify-evenly 
+  bg-gray-100 
+  shadow-lg dark:bg-gray-800;
+  width: calc(100vw - 5vw);
+  margin-left: 0.5vw;
+  height: 8vh;
+}
+
+.navbar-icon {
+  @apply mr-3
+  ml-4
+  cursor-pointer text-gray-500
+  transition duration-300 ease-in-out 
+  hover:text-main 
+  dark:text-gray-300 
+  dark:hover:text-main;
+}
+
+.navbar-icon:first {
+  @apply ml-auto mr-4;
+}
+
+.title-hashtag {
+  @apply my-auto ml-2 text-lg font-semibold 
+  tracking-wider text-gray-500;
+}
+
+.title-text {
+  @apply my-auto mr-auto ml-2 text-xl font-semibold tracking-wider 
+  text-gray-500 text-opacity-80 transition 
+  duration-300 ease-in-out dark:text-gray-200;
+}
+
+.search {
+  @apply ml-0 mr-0 flex h-9 
+  w-1/5 items-center
+  justify-start
+  rounded-md
+  bg-gray-400 px-2 text-gray-500 shadow-md 
+  transition duration-300
+  ease-in-out dark:bg-gray-600 dark:text-gray-400;
+}
+
+.search-input {
+  @apply w-full rounded bg-transparent
+  pl-1 font-sans 
+  font-semibold  text-gray-500
+  placeholder-gray-500
+  outline-none
+  dark:text-gray-300 dark:placeholder-gray-300;
+}
+
+.sidebar-icon {
+  @apply relative mx-auto mt-2 mb-2 
+  flex h-12 w-12 cursor-pointer items-center  
+justify-center rounded-3xl bg-gray-400 
+text-main shadow-lg
+  transition-all duration-300
+  ease-linear hover:rounded-xl hover:bg-main
+  hover:text-white dark:bg-gray-800;
+}
+
+.sidebar-icon-selected {
+  @apply relative mx-auto mt-2 mb-2 
+  flex h-12 w-12 cursor-pointer items-center 
+  justify-center rounded-xl
+  bg-gray-400 text-sec
+  shadow-lg
+  transition-all duration-300 ease-linear
+  dark:bg-gray-800 dark:text-sec;
+}
+
+.sidebar-tooltip {
+  @apply absolute left-14 m-2 w-auto min-w-max rounded-md bg-gray-900 p-2
+  text-xs font-bold 
+  text-white shadow-md;
+  margin-top: -0.5vw;
+  // transition-all duration-1000 scale-0 origin-left z-50;
+}
+
+.content-container {
+  @apply m-0 ml-16 
+  flex flex-col
+  overflow-hidden  bg-gray-200 
+  dark:bg-gray-700;
+  min-height: 100vh;
+}
+
+.content-list {
+  @apply mx-auto mt-0 ml-0 
+  flex h-full 
+  w-full flex-col items-center overflow-y-scroll px-0 
+  pb-12;
+}
+
+
+
+
+
+.table {
+  border-collapse: collapse;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// .thead {
+//   border-top-left-radius: 5vw;
+//   border-top-right-radius: 5vw;
+//   @apply dark:border-white/40;
+// }
+
+// .tfooter {
+//   border-bottom-left-radius: 5vw;
+//   border-bottom-right-radius: 5vw;
+//   // border: 1px solid red
+// }
+
+.th {
+  // font-size: 18px;
+  padding: 1vw;
+  // border: 1px solid #eeeeee;
+  @apply border-white 
+  bg-gray-100 
+  shadow-lg dark:bg-gray-900;
+  // background-color: rgba(217, 221, 146, 0.2);
+  // background-color: rgba(217, 221, 146, 0.2);
+}
+
+.td {
+  // border: 1px solid #eeeeee;
+  @apply bg-gray-400
+  dark:bg-gray-700 dark:border-gray-600;
+}
+
+.td-even {
+  // border: 1px solid #eeeeee;
+  // @apply border-red/90;
+  @apply bg-gray-300
+  dark:bg-gray-800 dark:border-gray-600;
+}
+
+.col {
+  background-color: transparent;
+  border: none;
+  // width: 91%;
+  padding: 0.7vw 1vw;
+  // font-family: 'Poppins', sans-serif;
+}
+
+// .col:hover {
+//   // background-color: #fffaf3;
+//   @apply bg-white/95;
+// }
+
+// .col:focus {
+//   // outline: 1px solid #ccc;
+//   // border: 1px solid #ccc;
+//   @apply border-white/70 outline-white/70;
+// }
+
+
+input::-webkit-file-upload-button {
+  // visibility: hidden;
+}
+
+input[type=file]::-webkit-file-upload-button {
+  display: none;
+}
+
+input[type=file]::-ms-browse {
+  display: none;
+
+}
+
+input[type=file]::file-selector-button {
+  display: none;
+
+}
+
+input[type=file]::file-selector-button {
+  border: 2px solid #6c5ce7;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+  background-color: #a29bfe;
+  transition: 1s;
+}
+
+.fc-button.fc-prev-button, .fc-button.fc-next-button, .fc-button.fc-button-primary{
+  @apply bg-sec dark:bg-main
+    text-white dark:text-white;
+
+  // background: red;
+  background-image: none;
+}
+
+.chakra-checkbox__label {
+  background-color: transparent !important;
+}
+
+// select option:not(:disabled) {
+//   @apply text-lumynal-dark-gray dark:text-offwhite;
+// }
+
+// select option:disabled {
+//   @apply text-lumynal-dark-gray dark:text-offwhite;
+//   color: 'red' !important;
+// }
+
+// select option.disabled {
+//    background-color:Chartreuse;
+// }
+
+// select option.disabled:disabled {
+//    color:yellow;
+//    background-color:blue;
+//    font-weight:bold;
+// }
+
+// select option:hover {
+//    color:pink;
+//    background-color:OrangeRed;
+// }
+
+// select {
+//   @apply placeholder-gray-400;
+// }

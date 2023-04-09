@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    // "src/**/*.{ts,tsx}"
+    // "src/**/*.{ts,tsx}"
+    // "src/components/*.{ts,tsx}",
+    // "src/contexts/*.{ts,tsx}",
+    // "src/data/*.{ts,tsx}",
+    // "src/guards/*.{ts,tsx}",
+    // "src/hooks/*.{ts,tsx}",
+    // "src/intl/*.{ts,tsx}",
+    // "src/pages/*.{ts,tsx}",
+    // "src/store/*.{ts,tsx}",
+    // "src/styles/*.{ts,tsx}",
+    // "src/tests/*.{ts,tsx}",
+    // "src/utils/*.{ts,tsx}",
+    // "src/**/*.{ts,tsx}",
+  ],
+  "exclude": [
+    "node_modules",
+    // "src/generated/*.{ts,tsx}"
+  ]
+}

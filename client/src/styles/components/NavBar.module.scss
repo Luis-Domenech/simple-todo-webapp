@@ -1,0 +1,34 @@
+.navbar {
+  @apply fixed m-0 flex  
+  bg-gray-100 
+  shadow-lg dark:bg-gray-800;
+  // width: calc(100vw - 5vw);
+  // margin-left: 0.5vw;
+  // height: 8vh;
+  z-index: 3;
+}
+
+.navbar-icon {
+  @apply mr-3
+  ml-4
+  cursor-pointer text-gray-500
+  transition duration-300 ease-in-out 
+  hover:text-main 
+  dark:text-gray-300 
+  dark:hover:text-main;
+}
+
+.navbar-icon:first {
+  @apply ml-auto mr-4;
+}
+
+.title-text {
+  @apply my-auto mr-auto ml-2 text-xl font-semibold tracking-wider 
+  text-gray-500 text-opacity-80 transition 
+  duration-300 ease-in-out dark:text-gray-200;
+}
+
+.sidebar {
+  @apply fixed top-0 left-0 z-50 flex h-screen flex-col bg-white shadow-lg dark:bg-gray-900;
+  width: 5vw;
+}

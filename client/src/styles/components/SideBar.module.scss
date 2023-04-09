@@ -1,0 +1,34 @@
+.sidebar {
+  @apply fixed top-0 left-0 z-50 flex h-screen flex-col bg-white shadow-lg dark:bg-gray-900;
+  // width: 5vw;
+  z-index: 5;
+}
+
+
+.sidebar-icon {
+  @apply relative mx-auto mt-2 mb-2 
+  flex h-12 w-12 cursor-pointer items-center  
+justify-center rounded-3xl bg-gray-400 
+text-main shadow-lg
+  transition-all duration-300
+  ease-linear hover:rounded-xl hover:bg-main
+  hover:text-white dark:bg-gray-800;
+}
+
+.sidebar-icon-selected {
+  @apply relative mx-auto mt-2 mb-2 
+  flex h-12 w-12 cursor-pointer items-center 
+  justify-center rounded-xl
+  bg-gray-400 text-sec
+  shadow-lg
+  transition-all duration-300 ease-linear
+  dark:bg-gray-800 dark:text-sec;
+}
+
+.sidebar-tooltip {
+  @apply absolute left-14 m-2 w-auto min-w-max rounded-md bg-gray-900 p-2
+  text-xs font-bold 
+  text-white shadow-md;
+  margin-top: -0.5vw;
+  // transition-all duration-1000 scale-0 origin-left z-50;
+}

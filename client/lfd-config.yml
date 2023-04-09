@@ -1,0 +1,51 @@
+--- # LFD GraphQL Client Generator Config
+schemaPath: graphql/schema.graphql
+endpoint: ${GRAPHQL_ENDPOINT}
+devEndpoint: ${DEV_GRAPHQL_ENDPOINT}
+# endpoint: ${DEV_GRAPHQL_ENDPOINT}
+# devEndpoint: http://localhost:4000/graphql
+installDeps: false
+installTypes: false
+useYarn: true
+indentSpaces: 2
+useSingleQuotes: true
+disableWarnings: false
+objectRecursionLimit: 4
+importsAsEsm: false
+prettierFormat: false
+useConventions: false
+
+generator:
+  schema:
+    outputDir: graphql
+    wipeOutputDir: false
+    useEndpoint: true
+
+  types:
+    outputDir: src/generated/lfd-client/types
+    enumAsType: false
+    enumAsConst: true
+    addTypenameField: false
+    enumTypeSuffix: _Enum
+    addNull: false
+    addUndefined: false
+    wipeOutputDir: true
+    scalars:
+      Lang: { override: 'Record<Language, string>', import: 'Language' }
+      Task: { override: '{task: string, checked: boolean}' }
+      TasksResponse: { override: 'Task[]' }
+      Langs: { override: 'Record<Language, string[]>', import: 'Language' }
+      Decimal: { override: 'number | string'}
+      DecimalScalar: { override: 'number | string'}
+      StringOrFloat: { override: 'number | string'}
+      Prisma.Prisma.Decimal: { override: 'number'}
+
+  client:
+    outputDir: src/generated/lfd-client/client
+    endpoint: ${GRAPHQL_ENDPOINT}
+    devEndpoint: ${DEV_GRAPHQL_ENDPOINT}
+    fetchDelay: 3000
+    loopFetchLimit: 3
+    wipeOutputDir: true
+    genHooks: false
+    hideTypeInstantiationError: true

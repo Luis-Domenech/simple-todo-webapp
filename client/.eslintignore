@@ -1,0 +1,2 @@
+# Ignore generated folder from being linted as those files are auto generated
+generated

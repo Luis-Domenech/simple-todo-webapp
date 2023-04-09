@@ -1,0 +1,21 @@
+type Query {
+  test(ip: String!): TasksResponse!
+  tasks(ip: String!): TasksResponse!
+}
+
+type TasksResponse {
+  data: [Task]!
+}
+
+type Task {
+  task: String!
+  checked: Boolean!
+}
+
+type Mutation {
+  add_task(ip: String!, task: String!): TasksResponse!
+  remove_task(ip: String!, task: String!): TasksResponse!
+  check_task(ip: String!, task: String!): TasksResponse!
+  uncheck_task(ip: String!, task: String!): TasksResponse!
+  clear_task(ip: String!): TasksResponse!
+}

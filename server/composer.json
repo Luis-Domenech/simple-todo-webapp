@@ -1,0 +1,13 @@
+{
+    "name": "luisdomenech/simple-graphql-server",
+    "description": "Just a simple GraphQL server",
+    "require": {
+        "webonyx/graphql-php": "^15.2"
+    },
+    "authors": [
+        {
+            "name": "Luis-Domenech",
+            "email": "luisfabiandomenech@gmail.com"
+        }
+    ]
+}
