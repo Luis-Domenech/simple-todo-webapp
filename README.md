@@ -2,7 +2,7 @@
 
 Just a simple todo webapp for the purpose of showing how I use ReactJS and PHP.
 
-## Frontent
+## Frontend
 
 A ReactJS frontend was setup using NextJS as a framework. Zustand was sued for state management and Formik and Zod for form management. GraphQL server querying is done using my [lfd-graphql-client](https://github.com/Luis-Domenech/lfd-graphql-client) package instead of something like Apollo or urql.
 
